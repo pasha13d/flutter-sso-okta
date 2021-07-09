@@ -1,5 +1,7 @@
 ## Running This Example
 
+https://user-images.githubusercontent.com/25312848/125111829-ffc40d00-e0ab-11eb-9843-08ec050b14c8.mov
+
 A flutter project that uses okta to login.
 
 This is a sample project for the okta sdk https://github.com/sonikro/flutter-okta-sdk.
