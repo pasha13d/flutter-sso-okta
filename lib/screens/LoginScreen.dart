@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
               await AuthProvider.of(context).authService.authorize();
               Navigator.of(context).pushNamed(MainScreen.routeName);
             },
-            child: Text('Authorize'),
+            child: Text('Log In'),
           ),
         ),
       ),

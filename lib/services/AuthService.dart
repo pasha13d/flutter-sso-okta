@@ -6,9 +6,9 @@ class AuthOktaService {
   var oktaSdk = OktaSDK();
   FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
-  static const String OKTA_DOMAIN = 'dev-590808.okta.com';
+  static const String OKTA_DOMAIN = 'coachella.okta.com';
   static const String OKTA_AUTHORIZER = 'default';
-  static const String OKTA_CLIENT_ID = '0oa11v7wzcWEjmK4u4x7';
+  static const String OKTA_CLIENT_ID = '0oawpt6r4I737eAOf5d6';
 
   static const String OKTA_ISSUER_URL =
       'https://$OKTA_DOMAIN/oauth2/$OKTA_AUTHORIZER';
