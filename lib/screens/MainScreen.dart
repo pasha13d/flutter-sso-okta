@@ -4,8 +4,11 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import 'dart:convert';
 
+import 'package:rflutter_alert/rflutter_alert.dart';
+
 class MainScreen extends StatelessWidget {
   static const routeName = '/main';
+
 
   parseUser(Map<String, dynamic> json) {
     return json['name'] as String;
@@ -13,6 +16,11 @@ class MainScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hi there"),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -24,8 +32,23 @@ class MainScreen extends StatelessWidget {
                       await AuthProvider.of(context).authService.getUser();
                   print(userJson);
                   Map<String, dynamic> user = jsonDecode(userJson);
-
-                  Fluttertoast.showToast(msg: "User: ${user['name']}");
+                  Alert(
+                    context: context,
+                    //type: AlertType.info,
+                    title: "Welcome, ${user['name']}",
+                    desc: "Great to have you here",
+                    buttons: [
+                      DialogButton(
+                        child: Text(
+                          "OK",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        onPressed: () => Navigator.pop(context),
+                        width: 120,
+                      )
+                    ],
+                  ).show();
+                  //Fluttertoast.showToast(msg: "user: ${user['name']}");
                 },
                 child: const Text('GetUser', style: TextStyle(fontSize: 20)),
               ),
