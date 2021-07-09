@@ -25,7 +25,7 @@ class MainScreen extends StatelessWidget {
                   print(userJson);
                   Map<String, dynamic> user = jsonDecode(userJson);
 
-                  Fluttertoast.showToast(msg: "Usuário: ${user['name']}");
+                  Fluttertoast.showToast(msg: "User: ${user['name']}");
                 },
                 child: const Text('GetUser', style: TextStyle(fontSize: 20)),
               ),
