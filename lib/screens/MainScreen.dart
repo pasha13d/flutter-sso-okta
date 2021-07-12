@@ -50,7 +50,7 @@ class MainScreen extends StatelessWidget {
                   ).show();
                   //Fluttertoast.showToast(msg: "user: ${user['name']}");
                 },
-                child: const Text('GetUser', style: TextStyle(fontSize: 20)),
+                child: const Text('getUser', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
               RaisedButton(
@@ -66,10 +66,26 @@ class MainScreen extends StatelessWidget {
                   var isAuthenticated = await AuthProvider.of(context)
                       .authService
                       .isAuthenticated();
-                  Fluttertoast.showToast(
-                      msg: "isAuthenticated: ${isAuthenticated.toString()}");
+                  // Fluttertoast.showToast(
+                  //     msg: "isAuthenticated: ${isAuthenticated.toString()}");
+                  Alert(
+                    context: context,
+                    //type: AlertType.info,
+                    title: "Authenticated: ${isAuthenticated.toString()}",
+                    desc: "Missed you",
+                    buttons: [
+                      DialogButton(
+                        child: Text(
+                          "OK",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        onPressed: () => Navigator.pop(context),
+                        width: 120,
+                      )
+                    ],
+                  ).show();
                 },
-                child: const Text('IsAuthenticated',
+                child: const Text('isAuthenticated',
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
@@ -80,7 +96,7 @@ class MainScreen extends StatelessWidget {
                       .getAccessToken();
                   Fluttertoast.showToast(msg: "AccessToken: $accessToken");
                 },
-                child: const Text('GetAccessToken',
+                child: const Text('getAccessToken',
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
@@ -90,7 +106,7 @@ class MainScreen extends StatelessWidget {
                       await AuthProvider.of(context).authService.getIdToken();
                   Fluttertoast.showToast(msg: "idToken: $idToken");
                 },
-                child: const Text('GetIdToken', style: TextStyle(fontSize: 20)),
+                child: const Text('getIdToken', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
               RaisedButton(
@@ -101,7 +117,7 @@ class MainScreen extends StatelessWidget {
                   Fluttertoast.showToast(msg: "result: $result");
                   Navigator.of(context).pushReplacementNamed('/splash');
                 },
-                child: const Text('RevokeAccessToken',
+                child: const Text('revokeAccessToken',
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
@@ -114,7 +130,7 @@ class MainScreen extends StatelessWidget {
                   Navigator.of(context).pushReplacementNamed('/splash');
                 },
                 child:
-                    const Text('RevokeIdToken', style: TextStyle(fontSize: 20)),
+                    const Text('revokeIdToken', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
               RaisedButton(
@@ -125,7 +141,7 @@ class MainScreen extends StatelessWidget {
                   Fluttertoast.showToast(msg: "result: $result");
                   Navigator.of(context).pushReplacementNamed('/splash');
                 },
-                child: const Text('RevokeRefreshToken',
+                child: const Text('revokeRefreshToken',
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
@@ -137,7 +153,7 @@ class MainScreen extends StatelessWidget {
                   Navigator.of(context).pushReplacementNamed('/splash');
                 },
                 child:
-                    const Text('ClearTokens', style: TextStyle(fontSize: 20)),
+                    const Text('clearTokens', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
               RaisedButton(
@@ -147,7 +163,7 @@ class MainScreen extends StatelessWidget {
                       .introspectAccessToken();
                   Fluttertoast.showToast(msg: "introspectAccessToken: $result");
                 },
-                child: const Text('IntrospectAccessToken',
+                child: const Text('introspectAccessToken',
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:phoenix/screens/MainScreen.dart';
+import 'package:phoenix/screens/LandingScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
@@ -21,7 +22,7 @@ class LoginScreen extends StatelessWidget {
             ),
             onPressed: () async {
               await AuthProvider.of(context).authService.authorize();
-              Navigator.of(context).pushNamed(MainScreen.routeName);
+              Navigator.of(context).pushNamed(LandingScreen.routeName);
             },
             child: Text('Log In'),
           ),
