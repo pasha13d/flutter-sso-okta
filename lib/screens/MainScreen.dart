@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:phoenix/main.dart';
 
 import 'dart:convert';
 
@@ -17,9 +18,9 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hi there"),
+        title: Text("Methods"),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: MyApp.appBarColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -56,7 +57,7 @@ class MainScreen extends StatelessWidget {
               RaisedButton(
                 onPressed: () async {
                   await AuthProvider.of(context).authService.logout();
-                  Navigator.of(context).pushReplacementNamed('/splash');
+                  Navigator.of(context).pushReplacementNamed('/login');
                 },
                 child: const Text('Logout', style: TextStyle(fontSize: 20)),
               ),

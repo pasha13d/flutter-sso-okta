@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:phoenix/screens/MainScreen.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:rive/rive.dart';
+import 'package:phoenix/main.dart';
+
+import 'ApiScreen.dart';
+import 'SplashScreen.dart';
 
 class LandingScreen extends StatelessWidget {
   static const routeName = '/landing';
@@ -11,13 +16,17 @@ class LandingScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("You made it!"),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: MyApp.appBarColor,
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                Container(
+                  height: 300,
+                  child: RiveAnimation.asset('assets/dolphin.riv'),
+                ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.teal,
@@ -32,7 +41,7 @@ class LandingScreen extends StatelessWidget {
                     context: context,
                     //type: AlertType.info,
                     title: "Authenticated: ${isAuthenticated.toString()}",
-                    desc: "Missed you",
+                    desc: "we missed u",
                     buttons: [
                       DialogButton(
                         child: Text(
@@ -47,14 +56,32 @@ class LandingScreen extends StatelessWidget {
                       },
                   child: Text('Check Auth Status'),
                 ),
-                RaisedButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal,
+                    onPrimary: Colors.white,
+                    onSurface: Colors.grey,
+                  ),
                   onPressed: () async {
                     Navigator.of(context).pushNamed(MainScreen.routeName);
                   },
-                  child: const Text('Do some cool shit',
-                      style: TextStyle(fontSize: 20)),
+                  child: Text('Do some cool shit'),
                 ),
-                const SizedBox(height: 30),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal,
+                    onPrimary: Colors.white,
+                    onSurface: Colors.grey,
+                  ),
+                  onPressed: () async {
+                    Navigator.of(context).pushNamed(ApiScreen.routeName);
+                  },
+                  child: Text('Hit some API\'s'),
+                ),
+                Container(
+                  child: SplashScreen(),
+                  height: 200,
+                ),
             ],
           ),
         ),

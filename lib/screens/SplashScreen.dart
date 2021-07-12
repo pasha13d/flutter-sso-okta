@@ -14,14 +14,14 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    startTime();
+    // startTime();
     super.initState();
   }
 
-  startTime() async {
-    var _duration = Duration(seconds: 3);
-    return Timer(_duration, navigationPage);
-  }
+  // startTime() async {
+  //   var _duration = Duration(seconds: 10);
+  //   return Timer(_duration, navigationPage);
+  // }
 
   void navigationPage() {
     Navigator.of(context).pushReplacementNamed('/login');
@@ -44,13 +44,13 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           onBottom(AnimatedWave(
             height: 120,
-            speed: 1.0,
-            color: Colors.black,
+            speed: 0.6,
+            color: Colors.lightBlueAccent,
           )),
           onBottom(AnimatedWave(
-              height: 140, speed: 0.9, offset: pi, color: Colors.red)),
+              height: 140, speed: 0.7, offset: pi, color: Colors.lightGreen)),
           onBottom(AnimatedWave(
-              height: 180, speed: 1.2, offset: pi / 2, color: Colors.blue)),
+              height: 180, speed:0.9, offset: pi / 2, color: Colors.blue)),
         ],
       ),
     );

@@ -1,30 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:phoenix/Animations/Waves.dart';
+import 'package:phoenix/main.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
-import 'package:phoenix/screens/MainScreen.dart';
 import 'package:phoenix/screens/LandingScreen.dart';
+import 'package:phoenix/screens/SplashScreen.dart';
+import 'package:rive/rive.dart';
+import 'dart:math';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
+
+  onBottom(Widget child) => Positioned.fill(
+    child: Align(
+      alignment: Alignment.bottomCenter,
+      child: child,
+    ),
+  );
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Welcome"),
+        title: Text("Welcome fishy"),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: MyApp.appBarColor,
       ),
-      body: Center(
-        child: Container(
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.teal,
-              onPrimary: Colors.white,
-              onSurface: Colors.grey,
-            ),
-            onPressed: () async {
-              await AuthProvider.of(context).authService.authorize();
-              Navigator.of(context).pushNamed(LandingScreen.routeName);
-            },
-            child: Text('Log In'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10),
+                height: 300,
+                child: RiveAnimation.asset('assets/dory.riv'),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.teal,
+                  onPrimary: Colors.white,
+                  onSurface: Colors.grey,
+                ),
+                onPressed: () async {
+                  await AuthProvider.of(context).authService.authorize();
+                  Navigator.of(context).pushNamed(LandingScreen.routeName);
+                },
+                child: Text('Log In'),
+              ),
+              Container(
+                child: SplashScreen(),
+                height: 275,
+              ),
+            ],
           ),
         ),
       ),
