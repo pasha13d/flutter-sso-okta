@@ -4,10 +4,6 @@ import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:phoenix/main.dart';
 import 'package:http/http.dart' as http;
 
-import 'dart:convert';
-
-import 'package:rflutter_alert/rflutter_alert.dart';
-
 import 'SplashScreen.dart';
 
 class ApiScreen extends StatelessWidget {
@@ -74,7 +70,7 @@ class ApiScreen extends StatelessWidget {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + accessToken
                       };
-                      var request = http.Request('GET', Uri.parse('https://coachella.okta.com/api/v1/users?limit=25'));
+                      var request = http.Request('GET', Uri.parse('https://coachella.okta.com/api/v1/apps/0oawpt6r4I737eAOf5d6/users'));
 
                       request.headers.addAll(headers);
 

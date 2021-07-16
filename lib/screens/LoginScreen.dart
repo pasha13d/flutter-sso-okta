@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:phoenix/Animations/Waves.dart';
 import 'package:phoenix/main.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:phoenix/screens/LandingScreen.dart';
 import 'package:phoenix/screens/SplashScreen.dart';
 import 'package:rive/rive.dart';
-import 'dart:math';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
