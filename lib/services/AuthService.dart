@@ -23,7 +23,7 @@ class AuthOktaService {
       discoveryUrl: OKTA_DISCOVERY_URL,
       endSessionRedirectUri: OKTA_LOGOUT_REDIRECT_URI,
       redirectUrl: OKTA_REDIRECT_URI,
-      scopes: ['openid', 'profile', 'email', 'offline_access']);
+      scopes: ['openid', 'profile', 'email', 'offline_access', 'okta.users.read']);
 
   Future createConfig() async {
     await oktaSdk.createConfig(oktaBaseRequest);

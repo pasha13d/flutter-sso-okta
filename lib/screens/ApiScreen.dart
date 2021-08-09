@@ -70,15 +70,15 @@ class ApiScreen extends StatelessWidget {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + accessToken
                       };
-                      var request = http.Request('GET', Uri.parse('https://coachella.okta.com/api/v1/apps/0oawpt6r4I737eAOf5d6/users'));
+                      var request = http.Request('GET', Uri.parse('https://coachella.okta.com/api/v1/users?limit=25'));
 
                       request.headers.addAll(headers);
 
                       http.StreamedResponse response = await request.send();
 
                       if (response.statusCode == 200) {
-                        Fluttertoast.showToast(msg: "idToken:");
-                        print(await response.stream.bytesToString());
+                        Fluttertoast.showToast(msg: await response.stream.bytesToString());
+                        //print(await response.stream.bytesToString());
                       }
                       else {
                         Fluttertoast.showToast(msg: response.statusCode.toString() + ": " + response.reasonPhrase);
