@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:phoenix/providers/OktaProvider.dart';
-import 'package:phoenix/screens/ApiScreen.dart';
 import 'package:phoenix/screens/LoginScreen.dart';
 import 'package:phoenix/screens/MainScreen.dart';
 import 'package:phoenix/screens/SplashScreen.dart';
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
           MainScreen.routeName: (ctx) => MainScreen(),
           LoginScreen.routeName: (ctx) => LoginScreen(),
           LandingScreen.routeName: (ctx) => LandingScreen(),
-          ApiScreen.routeName: (ctx) => ApiScreen()
         },
       ),
     );

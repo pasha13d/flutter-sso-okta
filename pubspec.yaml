@@ -33,7 +33,10 @@ dependencies:
   simple_animations: ^1.3.6
   fluttertoast: ^7.1.1
   flutter_secure_storage: ^3.3.4
-  flutter_okta_sdk: ^1.0.0-dev.1
+  flutter_okta_sdk: ^1.0.0-dev.7
+#    git:
+#      url: https://github.com/sonikro/flutter-okta-sdk
+#      ref: develop
   rive: ^0.7.22
   #flutter_okta_sdk:
   #  path: ../flutter-okta-sdk
@@ -42,6 +45,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

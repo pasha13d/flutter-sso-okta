@@ -5,7 +5,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:rive/rive.dart';
 import 'package:phoenix/main.dart';
 
-import 'ApiScreen.dart';
 import 'SplashScreen.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -41,7 +40,7 @@ class LandingScreen extends StatelessWidget {
                     context: context,
                     //type: AlertType.info,
                     title: "Authenticated: ${isAuthenticated.toString()}",
-                    desc: "we missed u",
+                    desc: "You are logged in",
                     buttons: [
                       DialogButton(
                         child: Text(
@@ -65,18 +64,7 @@ class LandingScreen extends StatelessWidget {
                   onPressed: () async {
                     Navigator.of(context).pushNamed(MainScreen.routeName);
                   },
-                  child: Text('Do some cool shit'),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.teal,
-                    onPrimary: Colors.white,
-                    onSurface: Colors.grey,
-                  ),
-                  onPressed: () async {
-                    Navigator.of(context).pushNamed(ApiScreen.routeName);
-                  },
-                  child: Text('Hit some API\'s'),
+                  child: Text('Use API methods'),
                 ),
                 Container(
                   child: SplashScreen(),
