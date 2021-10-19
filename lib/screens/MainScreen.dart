@@ -33,10 +33,11 @@ class MainScreen extends StatelessWidget {
                       await AuthProvider.of(context).authService.getUser();
                   print(userJson);
                   Map<String, dynamic> user = jsonDecode(userJson);
+                  print(user);
                   Alert(
                     context: context,
                     //type: AlertType.info,
-                    title: "Welcome, ${user['name']}",
+                    title: "Welcome, ${user['firstName']}",
                     desc: "Great to have you here",
                     buttons: [
                       DialogButton(

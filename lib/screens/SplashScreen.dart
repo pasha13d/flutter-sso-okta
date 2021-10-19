@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:phoenix/main.dart';
 import 'package:phoenix/Animations/Waves.dart';
 
 class SplashScreen extends StatefulWidget {
