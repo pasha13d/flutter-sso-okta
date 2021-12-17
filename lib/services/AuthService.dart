@@ -8,7 +8,7 @@ class AuthOktaService {
 
   static const String OKTA_DOMAIN = 'coachella.okta.com';
   static const String OKTA_AUTHORIZER = 'default';
-  static const String OKTA_CLIENT_ID = '0oawpt6r4I737eAOf5d6';
+  static const String OKTA_CLIENT_ID = '0oa29mv0fejaDf4Z25d7';
 
   static const String OKTA_ISSUER_URL =
       'https://$OKTA_DOMAIN/oauth2/$OKTA_AUTHORIZER';
@@ -19,11 +19,12 @@ class AuthOktaService {
   static const String OKTA_LOGOUT_REDIRECT_URI = 'com.deere.phoenix:/splash';
 
   static final oktaBaseRequest = BaseRequest(
+      issuer: OKTA_ISSUER_URL,
       clientId: OKTA_CLIENT_ID,
       discoveryUrl: OKTA_DISCOVERY_URL,
       endSessionRedirectUri: OKTA_LOGOUT_REDIRECT_URI,
       redirectUrl: OKTA_REDIRECT_URI,
-      scopes: ['openid', 'profile', 'email', 'offline_access']);
+      scopes: ['openid']);
 
   Future createConfig() async {
     await oktaSdk.createConfig(oktaBaseRequest);
