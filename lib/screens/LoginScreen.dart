@@ -40,13 +40,14 @@ class LoginScreen extends StatelessWidget {
                 ),
                 onPressed: () async {
                   await AuthProvider.of(context).authService.authorize();
+
                   Navigator.of(context).pushNamed(LandingScreen.routeName);
                 },
                 child: Text('Log In'),
               ),
               Container(
                 child: SplashScreen(),
-                height: 275,
+                height: 400,
               ),
             ],
           ),

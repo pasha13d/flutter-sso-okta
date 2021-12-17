@@ -44,9 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             color: Colors.white,
           ),
           onBottom(AnimatedWave(
-            height: 120,
-            speed: 0.6,
-            color: Colors.lightBlueAccent,
+            height: 120, speed: 0.6, color: Colors.lightBlueAccent,
           )),
           onBottom(AnimatedWave(
               height: 140, speed: 0.7, offset: pi, color: Colors.lightGreen)),

@@ -96,7 +96,22 @@ class MainScreen extends StatelessWidget {
                   var accessToken = await AuthProvider.of(context)
                       .authService
                       .getAccessToken();
-                  Fluttertoast.showToast(msg: "AccessToken: $accessToken");
+                  Alert(
+                    context: context,
+                    //type: AlertType.info,
+                    title: "Access Token",
+                    desc: "${accessToken.toString()}",
+                    buttons: [
+                      DialogButton(
+                        child: Text(
+                          "OK",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        onPressed: () => Navigator.pop(context),
+                        width: 120,
+                      )
+                    ],
+                  ).show();
                 },
                 child: const Text('getAccessToken',
                     style: TextStyle(fontSize: 20)),
@@ -106,7 +121,22 @@ class MainScreen extends StatelessWidget {
                 onPressed: () async {
                   var idToken =
                       await AuthProvider.of(context).authService.getIdToken();
-                  Fluttertoast.showToast(msg: "idToken: $idToken");
+                  Alert(
+                    context: context,
+                    //type: AlertType.info,
+                    title: "ID Token",
+                    desc: "${idToken.toString()}",
+                    buttons: [
+                      DialogButton(
+                        child: Text(
+                          "OK",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        onPressed: () => Navigator.pop(context),
+                        width: 120,
+                      )
+                    ],
+                  ).show();
                 },
                 child: const Text('getIdToken', style: TextStyle(fontSize: 20)),
               ),
@@ -116,8 +146,14 @@ class MainScreen extends StatelessWidget {
                   var result = await AuthProvider.of(context)
                       .authService
                       .revokeAccessToken();
-                  Fluttertoast.showToast(msg: "result: $result");
-                  Navigator.of(context).pushReplacementNamed('/splash');
+                  Alert(
+                    context: context,
+                    //type: AlertType.info,
+                    title: "Revoke Token",
+                    desc: "${result.toString()}"
+                  ).show();
+                  // Fluttertoast.showToast(msg: "result: $result");
+                  Navigator.of(context).pushReplacementNamed('/main');
                 },
                 child: const Text('revokeAccessToken',
                     style: TextStyle(fontSize: 20)),
