@@ -27,7 +27,7 @@ class MainScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var userJson =
                       await AuthProvider.of(context).authService.getUser();
@@ -55,7 +55,7 @@ class MainScreen extends StatelessWidget {
                 child: const Text('getUser', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   await AuthProvider.of(context).authService.logout();
                   Navigator.of(context).pushReplacementNamed('/login');
@@ -63,7 +63,7 @@ class MainScreen extends StatelessWidget {
                 child: const Text('Logout', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var isAuthenticated = await AuthProvider.of(context)
                       .authService
@@ -91,7 +91,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var accessToken = await AuthProvider.of(context)
                       .authService
@@ -102,7 +102,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var idToken =
                       await AuthProvider.of(context).authService.getIdToken();
@@ -111,7 +111,7 @@ class MainScreen extends StatelessWidget {
                 child: const Text('getIdToken', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -123,7 +123,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -135,7 +135,7 @@ class MainScreen extends StatelessWidget {
                     const Text('revokeIdToken', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -147,7 +147,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result =
                       await AuthProvider.of(context).authService.clearTokens();
@@ -158,7 +158,7 @@ class MainScreen extends StatelessWidget {
                     const Text('clearTokens', style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -169,7 +169,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -180,7 +180,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
@@ -192,7 +192,7 @@ class MainScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20)),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () async {
                   var result = await AuthProvider.of(context)
                       .authService
