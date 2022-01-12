@@ -74,7 +74,7 @@ class MainScreen extends StatelessWidget {
                     context: context,
                     //type: AlertType.info,
                     title: "Authenticated: ${isAuthenticated.toString()}",
-                    desc: "Missed you",
+                    desc: "Welcome back",
                     buttons: [
                       DialogButton(
                         child: Text(
