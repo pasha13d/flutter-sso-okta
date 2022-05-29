@@ -34,6 +34,7 @@ dependencies:
   fluttertoast: ^7.1.1
   flutter_secure_storage: ^3.3.4
   flutter_okta_sdk: ^1.0.0-dev.7
+  url_launcher: ^6.1.1
 #    git:
 #      url: https://github.com/sonikro/flutter-okta-sdk
 #      ref: develop

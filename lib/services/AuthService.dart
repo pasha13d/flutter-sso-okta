@@ -6,17 +6,18 @@ class AuthOktaService {
   var oktaSdk = OktaSDK();
   FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
-  static const String OKTA_DOMAIN = 'coachella.okta.com';
+  static const String OKTA_DOMAIN = 'dev-68692352.okta.com';
   static const String OKTA_AUTHORIZER = 'default';
-  static const String OKTA_CLIENT_ID = '0oa29mv0fejaDf4Z25d7';
+  // static const String OKTA_CLIENT_ID = '0oa29mv0fejaDf4Z25d7';
+  static const String OKTA_CLIENT_ID = '0oa4yviwvxs40yFst5d7';
 
   static const String OKTA_ISSUER_URL =
       'https://$OKTA_DOMAIN/oauth2/$OKTA_AUTHORIZER';
   static const String OKTA_DISCOVERY_URL =
       'https://$OKTA_DOMAIN/.well-known/openid-configuration';
 
-  static const String OKTA_REDIRECT_URI = 'com.deere.phoenix:/callback';
-  static const String OKTA_LOGOUT_REDIRECT_URI = 'com.deere.phoenix:/splash';
+  static const String OKTA_REDIRECT_URI = 'com.okta.dev-68692352:/callback';
+  static const String OKTA_LOGOUT_REDIRECT_URI = 'com.okta.dev-68692352:/splash';
 
   static final oktaBaseRequest = BaseRequest(
       issuer: OKTA_ISSUER_URL,

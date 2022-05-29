@@ -4,6 +4,7 @@ import 'package:phoenix/providers/OktaProvider.dart';
 import 'package:phoenix/screens/LandingScreen.dart';
 import 'package:phoenix/screens/SplashScreen.dart';
 import 'package:rive/rive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
@@ -44,6 +45,13 @@ class LoginScreen extends StatelessWidget {
                   Navigator.of(context).pushNamed(LandingScreen.routeName);
                 },
                 child: Text('Log In'),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: (() async {
+                  await launch('sms:+8801401416002?body=Hi, Pasha');
+                }),
+                child: Text("Send SMS"),
               ),
               Container(
                 child: SplashScreen(),
